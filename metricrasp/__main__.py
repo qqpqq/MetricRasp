@@ -1,4 +1,4 @@
-from metricrasp import create_app
+from metricrasp.app import create_app
 from metricrasp.config import HostConfig
 from metricrasp.const import RUN_SETTINGS
 
