@@ -6,11 +6,17 @@ def register_api(app: Flask) -> None:
     return None
 
 def register_extension(app: Flask) -> None:
-    extension.cors.init_app(app)
+    extensions.cors.init_app(app)
+    extensions.jwt.init_app(app)
     return None
 
-def create_app() -> Flask:
+def set_config(app: Flask, hpst_config: cls) -> None:
+    app.config.from_object(host_config)
+    return None
+
+def create_app(host_config: cls) -> Flask:
     app = Flask("metricrasp", __name__)
+    set_config(app, host_config)
     register_extension(app)
     register_api(app)
 
