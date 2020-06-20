@@ -15,4 +15,5 @@ class HostConfig:
     HOST = "0.0.0.0"
     PORT = 3000
     ENV = "production"
+    SECRET_KEY = os.getenv("SECRET_KEY")
     PASSWORD = os.getenv("PASSWORD")
