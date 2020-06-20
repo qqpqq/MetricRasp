@@ -3,24 +3,24 @@ import subprocess
 
 from metricrasp.config import MetricConfig
 
-def get_linux_version() -> str:
+def get_linux_version():
     with open(MetricConfig.linux_version, "r") as linux_version:
         return linux_version
 
-def get_cpu_temperature() -> float:
+def get_cpu_temperature():
     with open(MetricConfig.cpu_status_path, "r") as cpu_temperature:
         cpu_temperature = int(cpu_temperature) / 1000
         return float(cpu_temperature)
 
-def get_gpu_temperature() -> float:
+def get_gpu_temperature():
     out = subprocess.check_output([MetricConfig.gpu_temperature_path, "measure_temp"])
         return float(out.decode()[5:-2])
 
-def get_memory_status() -> str:
+def get_memory_status():
     with open(MetricConfig.memory_status_path, "r") as memory_status:
         return memory_status
 
-def get_cpu_status() -> str:
+def get_cpu_status():
     with open(MetricConfig.cpu_status_path, "r") as cpu_status:
         return cpu_status
 
