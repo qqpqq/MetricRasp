@@ -1,6 +1,6 @@
 from functools import wraps
 from flask import abort
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 
 def admin(fn):

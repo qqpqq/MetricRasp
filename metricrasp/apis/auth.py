@@ -12,4 +12,6 @@ class Auth(Resource):
     def post(self):
         password = request.json["password"]
         if not password == HostConfig.PASSWORD: abort(409)
-        return create_access_token(identity="admin")
+        return {
+            "access_token":create_access_token(identity="admin")
+        }
