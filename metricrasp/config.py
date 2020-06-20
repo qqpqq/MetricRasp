@@ -2,7 +2,7 @@ from metricrasp.util import json_parser
 
 
 class MetricConfig:
-    parsed_config = json_parser("../metricrasp.json")
+    parsed_config = json_parser("metricrasp/metricrasp.json")
 
     linux_version = parsed_config["linux_version"]
     cpu_temperature_path = parsed_config["cpu_temperature_path"]
