@@ -1,9 +1,9 @@
-import metricrasp.extensions
-
 from flask import Flask
 
+from metricrasp import extensions
 from metricrasp.apis import auth
 from metricrasp.apis import metric
+
 
 def register_api(app):
     app.register_blueprint(auth.api.blueprint)
