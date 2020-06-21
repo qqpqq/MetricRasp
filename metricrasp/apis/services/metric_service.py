@@ -9,8 +9,8 @@ def get_linux_version():
 
 def get_cpu_temperature():
     with open(MetricConfig.cpu_status_path, "r") as cpu_temperature:
-        cpu_temperature = int(cpu_temperature.read()) / 1000
-        return float(cpu_temperature)
+        # cpu_temperature = int(cpu_temperature.read()) / 1000
+        return cpu_temperature.read()
 
 def get_gpu_temperature():
     out = subprocess.check_output([MetricConfig.gpu_temperature_path, "measure_temp"])

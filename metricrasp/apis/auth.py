@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, abort
 from flask_restful import Api, Resource
 from flask_jwt_extended import create_access_token
 
