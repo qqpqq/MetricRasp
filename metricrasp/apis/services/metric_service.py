@@ -22,7 +22,7 @@ def get_memory_status():
 
 def get_cpu_status():
     with open(MetricConfig.cpu_status_path, "r") as cpu_status:
-        return cpu_status.raed()
+        return cpu_status.read()
 
 def get_metric():
     return {
