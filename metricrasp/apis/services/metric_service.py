@@ -14,7 +14,7 @@ def get_cpu_temperature():
 
 def get_gpu_temperature():
     out = subprocess.check_output([MetricConfig.gpu_temperature_path, "measure_temp"])
-    return float(out.decode()[5:-2])
+    return out.decode()[5:-2]
 
 def get_memory_status():
     with open(MetricConfig.memory_status_path, "r") as memory_status:
