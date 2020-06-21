@@ -5,11 +5,11 @@ from metricrasp.config import MetricConfig
 
 def get_linux_version():
     with open(MetricConfig.linux_version, "r") as linux_version:
-        return linux_version
+        return linux_version.read()
 
 def get_cpu_temperature():
     with open(MetricConfig.cpu_status_path, "r") as cpu_temperature:
-        cpu_temperature = int(cpu_temperature) / 1000
+        cpu_temperature = int(cpu_temperature.read()) / 1000
         return float(cpu_temperature)
 
 def get_gpu_temperature():
@@ -18,11 +18,11 @@ def get_gpu_temperature():
 
 def get_memory_status():
     with open(MetricConfig.memory_status_path, "r") as memory_status:
-        return memory_status
+        return memory_status.read()
 
 def get_cpu_status():
     with open(MetricConfig.cpu_status_path, "r") as cpu_status:
-        return cpu_status
+        return cpu_status.raed()
 
 def get_metric():
     return {
